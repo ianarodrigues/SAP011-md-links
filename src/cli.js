@@ -6,7 +6,12 @@ const { extractLinks } = require('./index');
 
 const filePath = process.argv[2];
 // console.log('Caminho do arquivo:', filePath);
+const options = {
+  validate: process.argv.includes('--validate'),
+  status: process.argv.includes('--status'),
+};
 
-extractLinks(filePath).then((links) => {
+extractLinks(filePath, options).then((links) => {
   console.log(links);
 });
+
