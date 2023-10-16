@@ -14,3 +14,4 @@ const options = {
 extractLinks(filePath, options).then((links) => {
   console.log(links);
 });
+

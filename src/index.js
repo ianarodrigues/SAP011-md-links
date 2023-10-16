@@ -39,3 +39,4 @@ function validateLinks(link) {
 }
 
 module.exports = { extractLinks, validateLinks };
+
