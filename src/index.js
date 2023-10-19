@@ -4,18 +4,25 @@ function extractLinks(filePath, options) {
   return fs.promises.readFile(filePath, 'utf8').then((data) => {
     const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
     const captures = [...data.matchAll(regex)];
-    const links = captures.map((capture) => ({
+    const objLinks = captures.map((capture) => ({
       text: capture[1],
       url: capture[2],
       file: filePath,
     }));
 
-    if (options.validate) {
-      const validations = links.map((link) =>
-        validateLinks(link));
-      return Promise.all(validations);
+    if (options.validate || options.stats) {
+      const validations = objLinks.map((link) =>
+        validateLinks(link)
+      )
+      if (options.validate && !options.stats) {
+        return Promise.all(validations);
+      } if (options.stats) {
+        return Promise.all(validations).then((validateArray) =>
+          statsLinks(validateArray, options)
+        );
+      }
     }
-    return links;
+    return objLinks;
   });
 }
 
@@ -38,5 +45,16 @@ function validateLinks(link) {
     });
 }
 
-module.exports = { extractLinks, validateLinks };
+function statsLinks(links) {
+  const linksSize = links.length;
+  const uniqueLinks = [...new Set(links.map((link) => link.url))].length;
+  const brokenLinks = links.filter((link) => link.status !== 200).length;
 
+  return {
+    total: linksSize,
+    unique: uniqueLinks,
+    broken: brokenLinks,
+  };
+}
+
+module.exports = { extractLinks, validateLinks, statsLinks };
