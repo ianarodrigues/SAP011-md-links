@@ -50,5 +50,11 @@ extractLinks(filePath, options)
         );
       });
     }
-  })
+  }).catch((error) => {
+    if (error.message === 'Empty file') {
+      console.log('Empty file');
+    } else {
+      console.log('Invalid command');
+    }
+  });
  

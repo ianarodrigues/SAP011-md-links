@@ -2,6 +2,9 @@ const fs = require('fs');
 
 function extractLinks(filePath, options) {
   return fs.promises.readFile(filePath, 'utf8').then((data) => {
+    if (!data) {
+      throw new Error('Empty file');
+    }
     const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
     const captures = [...data.matchAll(regex)];
     const objLinks = captures.map((capture) => ({
