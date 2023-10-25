@@ -1,8 +1,7 @@
 #!/usr/bin/env  node
-// console.log(chalk.red('Hello world!'));
 
 const chalk = require('chalk');
-const { extractLinks } = require('./index');
+const { mdLinks } = require('./index');
 
 const filePath = process.argv[2];
 const options = {
@@ -10,7 +9,7 @@ const options = {
   stats: process.argv.includes('--stats'),
 };
 
-extractLinks(filePath, options)
+mdLinks(filePath, options)
   .then((objLinks) => {
     if (options.validate && !options.stats) {
       objLinks.forEach((link) => {
@@ -30,7 +29,7 @@ extractLinks(filePath, options)
           );
         }
         console.log(
-          chalk.black('---------------------------------------------------------------------------------------------------------------------------------------')
+          chalk.black('-------------------------------------------------------------------------------------------------------')
         );
       });
     } else if (options.stats && !options.validate) {
@@ -51,10 +50,13 @@ extractLinks(filePath, options)
       });
     }
   }).catch((error) => {
-    if (error.message === 'Empty file') {
-      console.log('Empty file');
+    if (error.message === 'Incompatible file: not a Markdown file') {
+      console.log(chalk.red('Incompatible file: not a Markdown file'));
+    } else if (error.message === 'Unable to read the file because it is empty') {
+      console.log(chalk.red('Unable to read the file because it is empty'));
+    } else if (error.message === 'No links found in this file') {
+      console.log(chalk.red('No links found in this file'));
     } else {
-      console.log('Invalid command');
+      console.log(chalk.yellow('Invalid command'));
     }
   });
- 
