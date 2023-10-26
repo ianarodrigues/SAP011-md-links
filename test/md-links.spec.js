@@ -48,6 +48,10 @@ describe('mdLinks', () => {
     const path = './files/file-without-link.md';
     return expect(mdLinks(path)).rejects.toThrow('No links found in this file');
   });
+  it('should throw an error if the command is invalid', () => {
+    const fakeFilePath = './files/fake-file-path.md';
+    return expect(mdLinks(fakeFilePath)).rejects.toThrow('Invalid command');
+  });
 
   it('should return all link validations if the validation option is enabled', () => {
     const filePath = './files/file-with-links.md';

@@ -29,7 +29,7 @@ mdLinks(filePath, options)
           );
         }
         console.log(
-          chalk.black('-------------------------------------------------------------------------------------------------------')
+          chalk.black('--------------------------------------------------------------------------------------')
         );
       });
     } else if (options.stats && !options.validate) {
@@ -45,7 +45,7 @@ mdLinks(filePath, options)
         console.log(chalk.white('URL: ') + chalk.magenta(link.url));
         console.log(chalk.white('File: ') + chalk.yellow(link.file));
         console.log(
-          chalk.black('-------------------------------------------------------------------------------------------------------')
+          chalk.black('--------------------------------------------------------------------------------------')
         );
       });
     }
