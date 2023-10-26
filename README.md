@@ -27,21 +27,21 @@ Desenvolvi um fluxograma detalhado para facilitar o planejamento e a organizaç�
 
 ## 3. Funcionalidades principais
 
-- Realiza a leitura de arquivos `Markdown ('.md')` a partir da linha de comando;
-- Extrai os links contidos nos arquivos `Markdown ('.md')`;
+- Realiza a leitura de arquivos **`Markdown ('.md')`** a partir da linha de comando;
+- Extrai os links contidos nos arquivos **`Markdown ('.md')`**;
 - Verifica o status HTTP dos links através da opção **`--validate`**;
 - Fornece estatísticas sobre os links presentes nos arquivos utilizando a opção **`--stats`**;
 - Ao utilizar as opções **`--stats`** e **`--validate`** em conjunto, você terá acesso a estatísticas minuciosas, que incluem o total de links presentes, a quantidade de links únicos e também o número de links quebrados.
 
 ## 4. Guia de instalação e uso
-### 4.1 Instalação
+### 4.1. Instalação
 Para instalar a biblioteca e começar a aproveitar os seus recursos, abra o terminal e execute o seguinte comando:
 
 ```
 npm install md-links-iana-rodrigues
 ```
 
-### 4.2 Uso
+### 4.2. Uso
 O Markdown Links oferece as seguintes funcionalidades:
 
 **Extração de links** 
