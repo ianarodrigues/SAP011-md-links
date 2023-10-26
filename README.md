@@ -27,11 +27,11 @@ Desenvolvi um fluxograma detalhado para facilitar o planejamento e a organizaç�
 
 ## 3. Funcionalidades principais
 
-- Realiza a leitura de arquivos **`Markdown ('.md')`** a partir da linha de comando;
-- Extrai os links contidos nos arquivos Markdown;
-- Verifica o status HTTP dos links através da opção **`-validate`**;
-- Fornece estatísticas sobre os links presentes nos arquivos utilizando a opção **`-stats`**;
-- Ao utilizar as opções **`-stats`** e **`-validate`** em conjunto, você terá acesso a estatísticas minuciosas, que incluem o total de links presentes, a quantidade de links únicos e também o número de links quebrados.
+- Realiza a leitura de arquivos `Markdown ('.md')` a partir da linha de comando;
+- Extrai os links contidos nos arquivos `Markdown ('.md')`;
+- Verifica o status HTTP dos links através da opção **`--validate`**;
+- Fornece estatísticas sobre os links presentes nos arquivos utilizando a opção **`--stats`**;
+- Ao utilizar as opções **`--stats`** e **`--validate`** em conjunto, você terá acesso a estatísticas minuciosas, que incluem o total de links presentes, a quantidade de links únicos e também o número de links quebrados.
 
 ## 4. Guia de instalação e uso
 ### 4.1 Instalação
@@ -52,7 +52,7 @@ Para extrair os links de um arquivo `Markdown ('.md')` execute o seguinte comand
 md-links <caminho-do-arquivo>
 ```
 <p>
-<img src="./assets/extract-links.png" alt="Flowchart"/>
+<img src="./assets/extract-links.png" alt="Flowchart" width="800"/>
 </p>
 
 **Validação de links**
@@ -63,7 +63,7 @@ Para validar os links de um arquivo `Markdown ('.md')` execute o seguinte comand
 md-links <caminho-do-arquivo> --validate
 ```
 <p>
-<img src="./assets/md-links-validate.png" alt="Md-links --validate" />
+<img src="./assets/md-links-validate.png" alt="Md-links --validate" width="800"/>
 </p>
 
 **Estatísticas de links**
@@ -74,7 +74,7 @@ Para gerar as estatísticas de um arquivo `Markdown ('.md')` execute o seguinte 
 md-links <caminho-do-arquivo> --stats
 ```
 <p>
-<img src="./assets/md-links-stats.png" alt="Md-links --stats"/>
+<img src="./assets/md-links-stats.png" alt="Md-links --stats" width="800"/>
 </p>
 
 **Validação e estatísticas de links**
@@ -85,7 +85,7 @@ Para validar os links e gerar as estatísticas de um arquivo `Markdown ('.md')` 
 md-links <caminho-do-arquivo> --validate --stats
 ```
 <p>
-<img src="./assets/md-links-validate-stats.png" alt="Md-links -- validate --stats"/>
+<img src="./assets/md-links-validate-stats.png" alt="Md-links -- validate --stats" width="800"/>
 </p>
 
 **Mensagens de erro**
@@ -94,22 +94,22 @@ Algumas mensagens de erro poderão aparecer nas seguintes situações:
 
 Quando o arquivo não for `Markdown ('.md')`
 <p>
-<img src="./assets/incompatible-file.png" alt="Error message incompatible file"/>
+<img src="./assets/incompatible-file.png" alt="Error message incompatible file" width="800"/>
 </p>
 
 - Quando o arquivo `Markdown ('.md')` estiver vazio
 <p>
-<img src="./assets/empty-file.png" alt="Error message empty file"/>
+<img src="./assets/empty-file.png" alt="Error message empty file" width="800"/>
 </p>
 
 - Quando não tiver links para serem extraídos do arquivo `Markdown ('.md')`
 <p>
-<img src="./assets/no-links.png" alt="Error message no links file"/>
+<img src="./assets/no-links.png" alt="Error message no links file" width="800"/>
 </p>
 
 - Quando o comando for inválido
 <p>
-<img src="./assets/invalid-command.png" alt="Error message no links file"/>
+<img src="./assets/invalid-command.png" alt="Error message no links file" width="800"/>
 </p>
 
 ## 5. Testes unitários
@@ -119,23 +119,23 @@ A aplicação foi concluída após a realização bem-sucedida de 11 testes, alc
 </p>
 
 ## 6. Critérios mínimos de aceitação
-[x] Poder instalar via ` npm install `;
+* [x] Poder instalar via ` npm install `;
 
-[x] Guia de uso e instalação da biblioteca;
+* [x] Guia de uso e instalação da biblioteca;
 
-[x] Implementa `options.validate`;
+* [x] Implementa `options.validate`;
 
-[x] Possuir o executável `md-links` no path (configurado no `package.json`);
+* [x] Possuir o executável `md-links` no path (configurado no `package.json`);
 
-[x] Executar sem erros e ter o resultado esperado;
+* [x] Executar sem erros e ter o resultado esperado;
 
-[x] Implementar `--validate`;
+* [x] Implementar `--validate`;
 
-[x] Implementar `--stats`;
+* [x] Implementar `--stats`;
 
-[x] Os testes unitários devem cobrir no mínimo 70% dos statements, functions, lines e branches;
+* [x] Os testes unitários devem cobrir no mínimo 70% dos statements, functions, lines e branches;
 
-[x] Rodar os testes (`npm test`);
+* [x] Rodar os testes (`npm test`).
 
 ## 7. Tecnologias utilizadas
 - JavaScript
